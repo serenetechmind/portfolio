@@ -1,54 +1,82 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080808"><title>SERENE — Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070710">
+<title>SERENE — Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="grain"></div>
-<header><a class="logo" href="#home">SERENE<span>®</span></a><button id="menu">MENU</button></header>
+<div class="orb orb-a"></div><div class="orb orb-b"></div><div class="grain"></div>
+
+<header>
+  <a class="logo" href="#home">SERENE<span>®</span></a>
+  <button id="menu">MENU</button>
+</header>
+
 <nav id="nav">
-<button data-page="home">00 / HOME</button><button data-page="work">01 / WORK</button>
-<button data-page="about">02 / ABOUT</button><button data-page="now">03 / NOW</button>
-<button data-page="contact">04 / CONTACT</button>
+  <button data-page="home">00 / HOME</button>
+  <button data-page="work">01 / WORK</button>
+  <button data-page="about">02 / ABOUT</button>
+  <button data-page="now">03 / NOW</button>
+  <button data-page="contact">04 / CONTACT</button>
 </nav>
+
 <main>
 <section class="page hero active" id="home">
-<div class="label">PRODUCT THINKER / BUILDER / CREATIVE</div>
-<h1>I BUILD<br><i>WHAT'S NEXT.</i></h1>
-<p>I explore technology, creativity and systems — turning ideas into products, experiments and experiences.</p>
-<div class="actions"><button class="primary" data-page="work">VIEW SELECTED WORK <b>↗</b></button><button class="text" data-page="contact">LET'S TALK →</button></div>
-<div class="meta"><span>BASED IN NIGERIA</span><span>OPEN TO BUILDING</span></div>
+  <div class="label">PRODUCT THINKER / BUILDER / CREATIVE</div>
+  <h1>I BUILD<br><i>WHAT'S NEXT.</i></h1>
+  <p>I explore technology, creativity and systems — turning ideas into products, experiments and experiences.</p>
+  <div class="actions">
+    <button class="primary" data-page="work">VIEW SELECTED WORK <b>↗</b></button>
+    <button class="text" data-page="contact">LET'S TALK <span>→</span></button>
+  </div>
+  <div class="meta"><span><i class="dot"></i> BASED IN NIGERIA</span><span>OPEN TO BUILDING</span></div>
 </section>
+
 <section class="page" id="work">
-<div class="heading"><div><div class="label">01 / SELECTED WORK</div><h2>Ideas<br><i>made real.</i></h2></div><span class="year">2026—</span></div>
-<div class="projects">
-<article class="project wide"><small>01</small><div><em>CREATOR INFRASTRUCTURE / PLATFORM</em><h3>SERENEX</h3><p>A creator ecosystem designed to help people manage their creative journey, discover opportunities, collaborate, monetize and access the tools they need.</p></div><strong>↗</strong></article>
-<article class="project"><small>02</small><div><em>DIGITAL ARCHITECTURE / SYSTEMS</em><h3>ZORA<br>AXIS</h3><p>A systems-oriented brand exploring predictable excellence through digital architecture.</p></div><strong>↗</strong></article>
-<article class="project"><small>03</small><div><em>EXPERIMENT / ARCHIVE</em><h3>THE LAB</h3><p>A living archive for experiments, research, notes, unfinished ideas and the thinking behind the work.</p></div><a href="https://the-lab-demo.vercel.app" target="_blank">↗</a></article>
-</div>
+  <div class="heading"><div><div class="label">01 / SELECTED WORK</div><h2>Ideas<br><i>made real.</i></h2></div><span class="year">2026—</span></div>
+  <div class="projects">
+    <article class="project wide">
+      <small>01</small><div><em>CREATOR INFRASTRUCTURE / PLATFORM</em><h3>SERENEX</h3><p>A creator ecosystem designed to help people manage their creative journey, discover opportunities, collaborate, monetize and access the tools they need.</p></div><strong>↗</strong>
+    </article>
+    <article class="project blue">
+      <small>02</small><div><em>DIGITAL ARCHITECTURE / SYSTEMS</em><h3>ZORA<br>AXIS</h3><p>A systems-oriented brand exploring predictable excellence through digital architecture.</p></div><strong>↗</strong>
+    </article>
+    <article class="project violet">
+      <small>03</small><div><em>EXPERIMENT / ARCHIVE</em><h3>THE LAB</h3><p>A living archive for experiments, research, notes, unfinished ideas and the thinking behind the work.</p></div><a href="https://the-lab-six-eosin.vercel.app/" target="_blank">↗</a>
+    </article>
+  </div>
 </section>
+
 <section class="page" id="about">
-<div class="heading"><div><div class="label">02 / ABOUT</div><h2>Not just<br><i>a portfolio.</i></h2></div></div>
-<div class="about"><div class="statement">I’m interested in the space between an idea and the system that makes it possible.</div>
-<div class="copy"><p>I build concepts, digital products and creative systems with a focus on clarity, experience and long-term possibility.</p><p>This site is the public layer. <b>The Lab</b> is where the deeper process lives — experiments, observations, research and things still becoming.</p><p>I’m less interested in making noise and more interested in making something that lasts.</p></div></div>
+  <div class="heading"><div><div class="label">02 / ABOUT</div><h2>Not just<br><i>a portfolio.</i></h2></div></div>
+  <div class="about">
+    <div class="statement">I’m interested in the space between an idea and the system that makes it possible.</div>
+    <div class="copy"><p>I build concepts, digital products and creative systems with a focus on clarity, experience and long-term possibility.</p><p>This site is the public layer. <b>The Lab</b> is where the deeper process lives — experiments, observations, research and things still becoming.</p><p>I’m less interested in making noise and more interested in making something that lasts.</p></div>
+  </div>
 </section>
+
 <section class="page" id="now">
-<div class="heading"><div><div class="label">03 / NOW</div><h2>Currently<br><i>becoming.</i></h2></div></div>
-<div class="now">
-<div><span>01</span><b>BUILDING</b><p>The Lab — a living research and experiment archive.</p></div>
-<div><span>02</span><b>EXPLORING</b><p>Creator infrastructure, product systems and digital ecosystems.</p></div>
-<div><span>03</span><b>LEARNING</b><p>Product design, front-end development and system thinking.</p></div>
-</div>
-<a class="lab" href="https://the-lab-demo.vercel.app" target="_blank">ENTER THE LAB ↗</a>
+  <div class="heading"><div><div class="label">03 / NOW</div><h2>Currently<br><i>becoming.</i></h2></div></div>
+  <div class="now">
+    <div><span>01</span><b>BUILDING</b><p>The Lab — a living research and experiment archive.</p></div>
+    <div><span>02</span><b>EXPLORING</b><p>Creator infrastructure, product systems and digital ecosystems.</p></div>
+    <div><span>03</span><b>LEARNING</b><p>Product design, front-end development and system thinking.</p></div>
+  </div>
+  <a class="lab" href="https://the-lab-six-eosin.vercel.app/" target="_blank">ENTER THE LAB ↗</a>
 </section>
+
 <section class="page contact" id="contact">
-<div class="label">04 / CONTACT</div><h2>Have an idea?<br><i>Let's build.</i></h2>
-<p>For collaborations, product conversations or interesting problems worth solving.</p>
-<a href="mailto:hello@serene.example">hello@serene.example ↗</a>
+  <div class="label">04 / CONTACT</div>
+  <h2>Have an idea?<br><i>Let's build.</i></h2>
+  <p>For collaborations, product conversations or interesting problems worth solving.</p>
+  <a href="mailto:serenetechmind@gmail.com">serenetechmind@gmail.com ↗</a>
 </section>
 </main>
-<footer><span>SERENE® / PORTFOLIO</span><span>V0.1 / 2026</span></footer>
+
+<footer><span>SERENE® / PORTFOLIO</span><span>V0.2 / 2026</span></footer>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>

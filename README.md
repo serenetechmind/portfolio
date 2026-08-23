@@ -1,13 +1,15 @@
-# SERENE — Portfolio V0.1
+# SERENE — Portfolio V0.2
 
-This is the public-facing portfolio. **The Lab** remains a separate repository and becomes the deeper research/experiment layer.
+A color-enhanced public portfolio for Serene.
+
+## Connected Lab
+https://the-lab-six-eosin.vercel.app/
+
+## Contact
+serenetechmind@gmail.com
 
 ## Deploy
-Create a GitHub repository such as `serene-portfolio`, upload these files, then import the repository into Vercel.
+Upload these files to the existing portfolio GitHub repository and Vercel will redeploy it.
 
-## Before publishing
-Replace the placeholder Lab URL and email in `index.html`.
-
-## Architecture
-Portfolio = public identity, selected work, about, now, contact.
-The Lab = experiments, notes, research, process and the future Vault.
+## Direction
+The portfolio uses a restrained electric violet/indigo accent over an obsidian base, while The Lab keeps its darker research-lab identity.
