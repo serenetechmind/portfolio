@@ -18,3 +18,11 @@ Upload `index.html`, `style.css`, `script.js`, and `portrait.png` to the SERENE 
 Identity → Current State → Worlds → Thinking → Contact.
 
 The Lab remains the deeper research/archive environment rather than being visually merged into the portfolio.
+
+## V1.1 fixes
+- Mobile viewport overflow tightened.
+- Hero typography constrained to the screen width.
+- Menu now has an opaque/blurred panel so page text cannot show through it.
+- Menu is positioned directly beneath the header.
+- Menu closes automatically when scrolling.
+- Menu closes when tapping outside it.
