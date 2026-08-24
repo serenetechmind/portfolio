@@ -1,6 +1,9 @@
-# SERENE — Portfolio V0.2
+# SERENE — V1.0 / The Living Portfolio
 
-A color-enhanced public portfolio for Serene.
+This version intentionally moves beyond the earlier text-only portfolio.
+
+## Identity
+The portrait included is the image supplied by the owner in this conversation.
 
 ## Connected Lab
 https://the-lab-six-eosin.vercel.app/
@@ -9,7 +12,9 @@ https://the-lab-six-eosin.vercel.app/
 serenetechmind@gmail.com
 
 ## Deploy
-Upload these files to the existing portfolio GitHub repository and Vercel will redeploy it.
+Upload `index.html`, `style.css`, `script.js`, and `portrait.png` to the SERENE portfolio GitHub repository, then let Vercel redeploy.
 
 ## Direction
-The portfolio uses a restrained electric violet/indigo accent over an obsidian base, while The Lab keeps its darker research-lab identity.
+Identity → Current State → Worlds → Thinking → Contact.
+
+The Lab remains the deeper research/archive environment rather than being visually merged into the portfolio.
