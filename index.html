@@ -2,112 +2,235 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#070711">
-<title>SERENE — Digital Portfolio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080611">
+<meta name="description" content="SERENE — Product thinker, builder and creative. Digital products, systems and experiments.">
+<title>SERENE — Builder / Product Thinker / Creative</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="noise"></div>
-<div class="ambient a"></div><div class="ambient b"></div>
+<div class="ambient ambient-a"></div>
+<div class="ambient ambient-b"></div>
 
-<header>
-  <a href="#home" class="brand">SERENE<span>®</span></a>
-  <div class="header-status"><i></i> SYSTEM / ONLINE</div>
-  <button id="menuBtn">MENU</button>
+<header class="site-header">
+  <a href="#home" class="brand" aria-label="SERENE home">SERENE<span>®</span></a>
+  <div class="system-status"><i></i><span>SYSTEM / ONLINE</span></div>
+  <div class="header-year">2026</div>
 </header>
 
-<nav id="menu">
-  <button data-go="home">00 — HOME</button>
-  <button data-go="identity">01 — IDENTITY</button>
-  <button data-go="work">02 — WORLDS</button>
-  <button data-go="lab">03 — THE LAB</button>
-  <button data-go="contact">04 — CONTACT</button>
+<!-- Floating application-style navigation -->
+<button class="nav-orb" id="navOrb" aria-label="Open navigation" aria-expanded="false">
+  <span class="orb-core"></span>
+  <span class="orb-plus">+</span>
+</button>
+
+<nav class="floating-nav" id="floatingNav" aria-hidden="true">
+  <div class="nav-caption">NAVIGATION / 00—04</div>
+  <button data-go="home"><span>00</span> HOME</button>
+  <button data-go="identity"><span>01</span> IDENTITY</button>
+  <button data-go="worlds"><span>02</span> WORLDS</button>
+  <button data-go="lab"><span>03</span> THE LAB</button>
+  <button data-go="contact"><span>04</span> CONTACT</button>
 </nav>
 
 <main>
-<section class="screen hero" id="home">
-  <div class="hero-top"><span>PRODUCT THINKER / BUILDER / CREATIVE</span><span>2026</span></div>
-  <div class="hero-orbit orbit1"></div><div class="hero-orbit orbit2"></div>
+<section class="hero screen" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-top">
+    <span>PRODUCT THINKER / BUILDER / CREATIVE</span>
+    <span class="desktop-only">BASED IN NIGERIA</span>
+  </div>
+
   <div class="hero-copy">
     <p class="eyebrow">I DON'T JUST BUILD PRODUCTS.</p>
-    <h1>I BUILD<br><em>WHAT'S NEXT.</em></h1>
-    <p class="intro">I explore technology, creativity and systems — turning ideas into products, experiments and experiences.</p>
-    <div class="hero-actions">
-      <button class="solid" data-go="work">EXPLORE THE WORLDS <span>↗</span></button>
-      <button class="ghost" data-go="identity">MEET THE BUILDER <span>↓</span></button>
+    <h1><strong>I BUILD</strong><em>WHAT'S NEXT.</em></h1>
+    <p class="hero-explain">
+      I turn ideas into <b>digital products, systems and experiments</b> — moving from
+      “what if?” to something people can actually use.
+    </p>
+
+    <div class="hero-routes">
+      <button class="route primary" data-go="worlds">
+        <span><small>START HERE</small>EXPLORE WHAT I BUILD</span><b>↗</b>
+      </button>
+      <button class="route secondary" data-go="identity">
+        <span><small>THE PERSON BEHIND IT</small>MEET THE BUILDER</span><b>↓</b>
+      </button>
+    </div>
+
+    <div class="proof-strip">
+      <span><i></i> PRODUCTS</span>
+      <span>SYSTEMS</span>
+      <span>EXPERIMENTS</span>
+      <span>WRITING</span>
     </div>
   </div>
-  <div class="scroll-note"><span>SCROLL TO ENTER</span><b>↓</b></div>
+
+  <div class="hero-orbit orbit-a"></div>
+  <div class="hero-orbit orbit-b"></div>
+  <div class="hero-orbit orbit-c"></div>
+
+  <div class="scroll-cue"><span>SCROLL TO ENTER</span><b>↓</b></div>
 </section>
 
 <section class="section identity" id="identity">
-  <div class="section-tag">01 / THE PERSON BEHIND THE SYSTEM</div>
-  <div class="identity-grid">
-    <div class="portrait-wrap">
-      <div class="portrait-glow"></div>
+  <div class="section-head">
+    <span>01 / IDENTITY</span>
+    <span>WHO IS BUILDING?</span>
+  </div>
+
+  <div class="identity-layout">
+    <div class="portrait-card">
+      <div class="portrait-index">BUILDER / 001</div>
       <img src="portrait.png" alt="Portrait of Serene">
-      <div class="portrait-label"><span>SERENE TECHMIND</span><span>BUILDER / 001</span></div>
+      <div class="portrait-bottom"><span>SERENE TECHMIND</span><span>2026</span></div>
     </div>
-    <div class="identity-copy">
-      <div class="big-statement">I'm interested in the space between <em>an idea</em> and the system that makes it possible.</div>
-      <p>I build concepts, digital products and creative systems with a focus on clarity, experience and long-term possibility.</p>
-      <div class="roles">
-        <div><small>01</small><b>PRODUCT</b></div>
-        <div><small>02</small><b>SYSTEMS</b></div>
-        <div><small>03</small><b>CREATIVE TECHNOLOGY</b></div>
+
+    <div class="identity-content">
+      <p class="micro">THE SHORT VERSION</p>
+      <h2>I'm a <em>builder</em> who thinks in systems.</h2>
+      <p class="body-copy">
+        I like taking ideas apart, finding the structure underneath them, then building
+        a version that can live in the real world. My work sits between technology,
+        creativity, product thinking and systems.
+      </p>
+
+      <div class="capabilities">
+        <div><span>01</span><strong>PRODUCT THINKING</strong><p>Turning rough ideas into clearer products, journeys and experiences.</p></div>
+        <div><span>02</span><strong>SYSTEMS</strong><p>Designing the logic, structure and connections behind a product.</p></div>
+        <div><span>03</span><strong>BUILDING</strong><p>Learning by making — websites, prototypes, tools and experiments.</p></div>
+        <div><span>04</span><strong>CREATIVE TECHNOLOGY</strong><p>Exploring where code, design, writing and imagination overlap.</p></div>
       </div>
-      <div class="currently"><span>CURRENTLY</span><strong>BUILDING WORLDS, NOT JUST WEBSITES.</strong></div>
     </div>
   </div>
 </section>
 
-<section class="section pulse">
-  <div class="section-tag">CURRENT STATE</div>
-  <div class="stats">
-    <div><strong>03</strong><span>ACTIVE WORLDS</span></div>
-    <div><strong>07+</strong><span>EXPERIMENTS</span></div>
-    <div><strong>01</strong><span>LIVE LAB</span></div>
-    <div><strong>∞</strong><span>IDEAS IN PROGRESS</span></div>
+<section class="section signal">
+  <div class="signal-line"></div>
+  <div class="signal-grid">
+    <div><small>CURRENT STATE</small><strong>BUILDING</strong></div>
+    <div><small>APPROACH</small><strong>THINK → BUILD → OBSERVE</strong></div>
+    <div><small>MODE</small><strong>LEARNING IN PUBLIC</strong></div>
   </div>
 </section>
 
-<section class="section work" id="work">
-  <div class="section-tag">02 / WORLDS I'M BUILDING</div>
-  <div class="work-intro"><h2>Ideas become<br><em>systems.</em></h2><p>Different projects. One underlying question: what happens when an idea is built seriously?</p></div>
+<section class="section worlds" id="worlds">
+  <div class="section-head">
+    <span>02 / WORLDS</span>
+    <span>WHAT I'M BUILDING</span>
+  </div>
 
-  <article class="world serenex">
-    <div class="world-meta"><span>01</span><span>CREATOR INFRASTRUCTURE / PLATFORM</span></div>
-    <div class="world-body"><div><h3>SERENEX</h3><p>A creator ecosystem designed to help people manage their creative journey, discover opportunities, collaborate, monetize and access the tools they need.</p><button>VIEW WORLD ↗</button></div><div class="visual creator"><div class="node n1"></div><div class="node n2"></div><div class="node n3"></div><div class="core">SX</div></div></div>
-  </article>
+  <div class="world-intro">
+    <div>
+      <p class="micro">NOT JUST PROJECTS</p>
+      <h2>Ideas become<br><em>worlds.</em></h2>
+    </div>
+    <p class="body-copy">
+      These are the systems, products and concepts I'm exploring. Some are early.
+      Some are becoming real. All of them show how I think.
+    </p>
+  </div>
 
-  <article class="world zora">
-    <div class="world-meta"><span>02</span><span>DIGITAL ARCHITECTURE / SYSTEMS</span></div>
-    <div class="world-body"><div><h3>ZORA<br>AXIS</h3><p>A systems-oriented brand exploring predictable excellence through digital architecture.</p><button>VIEW WORLD ↗</button></div><div class="visual axis"><div class="axis-ring"></div><div class="axis-ring two"></div><span>AXIS</span></div></div>
-  </article>
+  <div class="world-list">
+    <article class="world-card">
+      <div class="world-number">01</div>
+      <div class="world-info">
+        <div class="world-label">CREATOR INFRASTRUCTURE / PLATFORM</div>
+        <h3>SERENEX</h3>
+        <p>A creator ecosystem for managing the creative journey, finding opportunities,
+          collaborating, monetizing and accessing useful tools.</p>
+        <button class="text-action" data-toast="SERENEX case study is being prepared.">VIEW WORLD <span>↗</span></button>
+      </div>
+      <div class="world-visual serenex-visual">
+        <div class="node node-1"></div><div class="node node-2"></div><div class="node node-3"></div>
+        <div class="connection c1"></div><div class="connection c2"></div>
+        <div class="visual-core">SX</div>
+      </div>
+    </article>
 
-  <article class="world lab" id="lab">
-    <div class="world-meta"><span>03</span><span>EXPERIMENT / RESEARCH / ARCHIVE</span></div>
-    <div class="world-body"><div><h3>THE<br>LAB</h3><p>A living archive of experiments, observations, research, prototypes and ideas still becoming.</p><a href="https://the-lab-six-eosin.vercel.app/" target="_blank">ENTER THE LAB ↗</a></div><div class="lab-card"><span>BUILD.</span><span>OBSERVE.</span><span>REPEAT.</span><small>LIVE / 001</small></div></div>
-  </article>
+    <article class="world-card">
+      <div class="world-number">02</div>
+      <div class="world-info">
+        <div class="world-label">DIGITAL ARCHITECTURE / BRAND SYSTEM</div>
+        <h3>ZORA<br>AXIS</h3>
+        <p>A systems-oriented brand exploring predictable excellence through digital architecture,
+          structure and controlled experience.</p>
+        <button class="text-action" data-toast="ZORA AXIS case study is being prepared.">VIEW WORLD <span>↗</span></button>
+      </div>
+      <div class="world-visual axis-visual">
+        <div class="axis-ring"></div><div class="axis-ring ring-2"></div><div class="axis-ring ring-3"></div>
+        <span>AXIS</span>
+      </div>
+    </article>
+
+    <article class="world-card lab-world" id="lab">
+      <div class="world-number">03</div>
+      <div class="world-info">
+        <div class="world-label">EXPERIMENT / RESEARCH / ARCHIVE</div>
+        <h3>THE<br>LAB</h3>
+        <p>A living archive for experiments, observations, research, prototypes and ideas still becoming.</p>
+        <a class="text-action" href="https://the-lab-six-eosin.vercel.app/" target="_blank" rel="noopener">ENTER THE LAB <span>↗</span></a>
+      </div>
+      <div class="lab-visual">
+        <div>BUILD.</div><div>OBSERVE.</div><div>REPEAT.</div>
+        <small>LIVE / 001</small>
+      </div>
+    </article>
+  </div>
 </section>
 
-<section class="section philosophy">
-  <div class="section-tag">THE THINKING</div>
-  <h2>Less interested in<br><em>noise.</em><br>More interested in <em>what lasts.</em></h2>
-  <div class="philosophy-line"><span>SERENE / 2026</span><p>Build with intention. Observe what happens. Refine the system. Repeat.</p></div>
+<section class="section method">
+  <div class="section-head">
+    <span>03 / HOW I THINK</span>
+    <span>THE BUILD LOOP</span>
+  </div>
+  <div class="method-layout">
+    <h2>Don't wait<br>for the <em>perfect idea.</em></h2>
+    <div class="method-steps">
+      <div><b>01</b><strong>QUESTION</strong><p>What problem, possibility or curiosity is worth exploring?</p></div>
+      <div><b>02</b><strong>BUILD</strong><p>Make a small, tangible version instead of keeping it in your head.</p></div>
+      <div><b>03</b><strong>OBSERVE</strong><p>See what works, what breaks and what people actually understand.</p></div>
+      <div><b>04</b><strong>REPEAT</strong><p>Refine the system and let the next version teach you something new.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section lab-teaser">
+  <div class="lab-frame">
+    <div class="lab-frame-top"><span>THE LAB / LIVE ARCHIVE</span><span>03</span></div>
+    <div class="lab-frame-body">
+      <p class="micro">FOR THE THINGS THAT AREN'T READY TO BE CALLED PRODUCTS</p>
+      <h2>BUILD.<br><em>OBSERVE.<br>REPEAT.</em></h2>
+      <p>Research notes. Product experiments. Strange ideas. Things I'm learning. Things I'm testing.</p>
+      <a href="https://the-lab-six-eosin.vercel.app/" target="_blank" rel="noopener" class="lab-cta">ENTER THE LAB <span>↗</span></a>
+    </div>
+  </div>
 </section>
 
 <section class="section contact" id="contact">
-  <div class="section-tag">04 / OPEN CHANNEL</div>
-  <div class="contact-main">
-    <p>Have an idea worth building?</p>
-    <h2>LET'S<br><em>BUILD.</em></h2>
-    <a href="mailto:serenetechmind@gmail.com">serenetechmind@gmail.com ↗</a>
+  <div class="section-head">
+    <span>04 / CONTACT</span>
+    <span>OPEN CHANNEL</span>
   </div>
-  <div class="contact-footer"><span>SERENE®</span><span>THE NEXT VERSION IS ALREADY IN MOTION.</span></div>
+  <div class="contact-layout">
+    <div>
+      <p class="micro">HAVE SOMETHING WORTH BUILDING?</p>
+      <h2>LET'S<br><em>BUILD.</em></h2>
+    </div>
+    <div class="contact-side">
+      <p>I'm open to conversations around products, systems, creative technology, learning and ambitious ideas.</p>
+      <a href="mailto:serenetechmind@gmail.com">serenetechmind@gmail.com <span>↗</span></a>
+    </div>
+  </div>
+  <footer>
+    <span>SERENE® / PORTFOLIO</span>
+    <span>THE NEXT VERSION IS ALREADY IN MOTION.</span>
+  </footer>
 </section>
 </main>
+
+<div class="toast" id="toast" role="status"></div>
 <script src="script.js"></script>
 </body>
 </html>
