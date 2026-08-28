@@ -216,19 +216,23 @@
     <span>LANGUAGE / DAILY PRACTICE</span>
   </div>
   <div class="calibration-layout">
-    <div>
+    <div class="calibration-intro">
       <p class="micro">THE SERENE CALIBRATION</p>
       <h2>Words are<br><em>instruments.</em></h2>
       <p class="body-copy">A daily practice of learning a new word, using it deliberately, and turning language into small pieces of thought.</p>
+      <div class="calibration-counter"><span id="calibrationCount">01</span> ENTRIES IN THE ARCHIVE</div>
     </div>
-    <article class="calibration-card">
-      <div class="calibration-meta"><span>ENTRY 001</span><span>WORD / SHENANIGANS</span></div>
-      <p>Let the noisy world play out its desperate shenanigans below,<br>
-      Where chaotic currents flicker in a temporary show.<br>
-      Unmoved by fleeting theater, we maintain our quiet steady line,<br>
-      Crafting pristine architecture that outlasts the march of time.</p>
-      <div class="calibration-foot"><span>LANGUAGE PRACTICE</span><span>01 / 01</span></div>
+    <article class="calibration-card" id="featuredCalibration">
+      <div class="calibration-meta"><span id="featuredEntry">ENTRY 001</span><span id="featuredDate">28 AUG 2026</span></div>
+      <div class="calibration-word"><span>WORD /</span> <strong id="featuredWord">SHENANIGANS</strong> <small id="featuredClass">NOUN</small></div>
+      <p id="featuredText"></p>
+      <div class="calibration-note" id="featuredNote"></div>
+      <div class="calibration-foot"><span>LANGUAGE PRACTICE</span><button class="calibration-share" id="shareCalibration">COPY ENTRY LINK ↗</button></div>
     </article>
+  </div>
+  <div class="calibration-archive">
+    <div class="archive-head"><span>ARCHIVE</span><span>NEWEST → OLDEST</span></div>
+    <div id="calibrationArchive"></div>
   </div>
   <div class="social-row">
     <span>FOLLOW THE PRACTICE</span>
@@ -260,6 +264,7 @@
 </main>
 
 <div class="toast" id="toast" role="status"></div>
+<script src="calibrations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

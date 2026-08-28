@@ -84,7 +84,7 @@ a{text-decoration:none}
 
 @media(max-width:760px){
   .site-header{height:72px;padding:0 20px}.system-status{display:none}.header-year{margin-left:auto}.brand{font-size:22px}
-  .nav-orb{right:16px;bottom:16px;width:56px;height:56px}.floating-nav{right:16px;bottom:82px;width:min(224px,calc(100vw - 32px));padding:8px}}
+  .nav-orb{right:16px;bottom:16px;width:56px;height:56px}.floating-nav{right:16px;bottom:82px;width:min(224px,calc(100vw - 32px));padding:8px}
   .hero{min-height:100svh;padding-top:130px;padding-bottom:100px;align-items:flex-start}.hero-grid{inset:72px 0 0;background-size:52px 52px}.hero-top{top:98px;font-size:8px;letter-spacing:.15em}.desktop-only{display:none}
   .hero h1{font-size:18vw;line-height:.79;margin-bottom:34px}.hero-explain{font-size:17px;line-height:1.55}.hero-routes{display:grid;grid-template-columns:1fr;gap:10px}.route{min-width:0;width:100%;min-height:72px}.proof-strip{gap:11px;flex-wrap:wrap;margin-top:24px;font-size:8px}
   .orbit-a{width:320px;height:320px;right:-205px;top:36%}.orbit-b{width:235px;height:235px;right:-25px;top:49%}.orbit-c{width:130px;height:130px;right:100px;top:60%}
@@ -94,4 +94,32 @@ a{text-decoration:none}
   .signal{padding-top:10px;padding-bottom:50px}.signal-grid{grid-template-columns:1fr;gap:14px}.signal-grid div{padding:13px 0 13px 12px}
   .world-intro{margin-bottom:45px}.world-card{grid-template-columns:28px 1fr;gap:10px;padding:35px 0;min-height:0}.world-visual,.lab-visual{grid-column:2;min-height:220px;margin-top:20px}.world-info h3{font-size:16vw}
   .lab-frame-body{padding:45px 24px}.lab-frame-body h2{font-size:18vw}.calibration-layout{grid-template-columns:1fr;gap:32px}.calibration h2{font-size:17vw}.calibration-card{padding:18px;min-height:270px}.calibration-card p{font-size:17px}.social-row{gap:14px;flex-wrap:wrap}.contact{min-height:80svh}footer{gap:20px;flex-direction:column;margin-top:70px}
+}
+
+/* V4 — living interface refinements */
+.floating-nav{width:min(214px,calc(100vw - 40px));padding:7px 9px;border-radius:2px;box-shadow:0 18px 55px rgba(0,0,0,.52)}
+.floating-nav .nav-caption{padding:8px 7px 9px;font-size:8px;letter-spacing:.16em}
+.floating-nav button{padding:9px 7px;font-size:9px;letter-spacing:.13em;min-height:36px}
+.floating-nav button span{min-width:22px}
+.nav-orb{width:58px;height:58px;right:20px;bottom:20px}
+.calibration-word{margin:22px 0 8px;font-size:10px;letter-spacing:.14em;color:#777381}
+.calibration-word strong{font-size:clamp(20px,2.5vw,30px);letter-spacing:.03em;color:#f2eef8;margin-left:6px}
+.calibration-word small{color:#9b6bff;margin-left:8px}
+.calibration-note{font-size:11px;line-height:1.55;color:#777381;max-width:520px}
+.calibration-counter{margin-top:35px;padding-top:15px;border-top:1px solid var(--line);font-size:9px;letter-spacing:.16em;color:#777381}
+.calibration-counter span{font-size:18px;color:#b08cff;margin-right:7px}
+.calibration-foot{align-items:center}
+.calibration-share{font-size:8px;letter-spacing:.14em;color:#9f77ff;transition:.2s}
+.calibration-share:hover{color:#fff}
+.calibration-archive{margin-top:60px;border-top:1px solid var(--line)}
+.archive-head{display:flex;justify-content:space-between;padding:14px 0;font-size:8px;letter-spacing:.16em;color:#777381}
+.archive-item{width:100%;display:grid;grid-template-columns:60px 1fr 140px 30px;align-items:center;gap:16px;padding:17px 0;border-top:1px solid rgba(255,255,255,.07);text-align:left;color:#d9d4e1;transition:.25s}
+.archive-item:hover{padding-left:10px;background:linear-gradient(90deg,rgba(143,86,255,.08),transparent)}
+.archive-no,.archive-date{font-size:8px;letter-spacing:.14em;color:#777381}.archive-word{font-family:"Playfair Display",serif;font-style:italic;font-size:19px}.archive-arrow{color:#9b6bff}
+.reading-progress{position:fixed;z-index:30;left:0;top:0;width:100%;height:2px;background:linear-gradient(90deg,#7a5cff,#c24dff);transform-origin:left center;transform:scaleX(0);pointer-events:none}
+@media(max-width:760px){
+ .floating-nav{width:196px;right:16px;bottom:79px;padding:6px 8px}
+ .floating-nav button{min-height:34px;padding:8px 6px}
+ .nav-orb{right:16px;bottom:16px;width:54px;height:54px}
+ .calibration-word{margin-top:18px}.archive-item{grid-template-columns:40px 1fr 88px 18px;gap:8px}.archive-word{font-size:17px}.archive-date{font-size:7px}
 }
