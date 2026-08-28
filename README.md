@@ -1,20 +1,23 @@
-# SERENE — V2 / Interactive Portfolio
+# SERENE Portfolio — V3
 
-This version reframes the portfolio as an interactive personal system rather than a conventional résumé site.
+Mobile-first interactive portfolio.
 
-## What changed
-- Floating purple navigation orb at the lower-right.
-- Menu unfolds above the orb and closes on scroll or outside tap.
-- Hero copy immediately explains what Serene does.
-- Clear routes: explore the work or meet the builder.
-- Identity, capabilities, worlds, build philosophy, Lab and contact are distinct.
-- SERENEX, ZORA AXIS and THE LAB are treated as "worlds".
-- The Lab remains an external live archive: https://the-lab-six-eosin.vercel.app/
-- Contact: serenetechmind@gmail.com
-- Mobile-first overflow and viewport handling.
+## V3 changes
+- Slimmer, smaller floating navigation panel with a premium compact footprint.
+- Navigation now includes CALIBRATION.
+- Menu closes on navigation, outside tap and scroll.
+- Added THE SERENE CALIBRATION as a lightweight recurring-content identity.
+- Added direct Instagram and TikTok links.
+- Facebook and X are intentionally not included until those profiles are ready.
 
 ## Deploy
-Upload `index.html`, `style.css`, `script.js`, `portrait.png`, and `README.md` to the portfolio repository and let Vercel redeploy.
+Replace the files in the existing portfolio repository, then push to GitHub. Vercel should redeploy automatically.
 
-## Note
-Google Fonts are loaded remotely. If you want the site to work fully offline, replace them with local font files.
+## Social bios
+Instagram: Product thinker / builder / creative.
+Building products, systems & experiments.
+The Lab → portfolio link
+
+TikTok: I build what’s next.
+Products • systems • experiments • words
+SERENE / THE LAB
