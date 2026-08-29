@@ -2,57 +2,47 @@ const navOrb = document.getElementById("navOrb");
 const floatingNav = document.getElementById("floatingNav");
 const toast = document.getElementById("toast");
 
-// Calibration content engine: newest entry is always featured.
+// Calibration preview: newest entry leads the homepage composition.
 const calibrations = window.CALIBRATIONS || [];
-const featuredText = document.getElementById("featuredText");
-const archive = document.getElementById("calibrationArchive");
-const featured = calibrations[0];
+const calibrationPreview = document.getElementById("calibrationPreview");
+const calibrationCount = document.getElementById("calibrationCount");
 
-function renderCalibration(){
-  document.getElementById("calibrationCount").textContent = String(calibrations.length).padStart(2,"0");
-  if(!featured){
-    document.getElementById("featuredEntry").textContent = "NO ENTRIES";
-    document.getElementById("featuredDate").textContent = "";
-    document.getElementById("featuredWord").textContent = "CALIBRATION";
-    document.getElementById("featuredClass").textContent = "";
-    featuredText.textContent = "No calibration entries yet.";
-    document.getElementById("featuredNote").textContent = "";
-    archive.innerHTML = "";
+function setPreviewCard(card, item, index){
+  if(!card) return;
+  card.hidden = !item;
+  if(!item) return;
+  card.href = `calibration.html#${encodeURIComponent(item.entry)}`;
+  card.setAttribute("aria-label", `Read Calibration entry ${item.entry}: ${item.word}`);
+  card.querySelector(".preview-entry").textContent = index === 0 ? `LATEST / ${item.entry}` : `ENTRY ${item.entry}`;
+  card.querySelector(".preview-date").textContent = item.date;
+  card.querySelector(".preview-word strong").textContent = item.word.toUpperCase();
+  card.querySelector(".preview-word small").textContent = item.className;
+  card.querySelector(".preview-excerpt").textContent = item.text.slice(0, 2).join(" ");
+}
+
+function renderCalibrationPreview(){
+  if(!calibrationPreview || !calibrationCount) return;
+  calibrationCount.textContent = String(calibrations.length).padStart(2, "0");
+  const front = calibrationPreview.querySelector(".calibration-front");
+  const rearCards = calibrationPreview.querySelectorAll(".calibration-rear");
+  if(!calibrations.length){
+    front.hidden = false;
+    front.removeAttribute("href");
+    front.setAttribute("aria-label", "Calibration archive is empty");
+    front.querySelector(".preview-entry").textContent = "ARCHIVE / EMPTY";
+    front.querySelector(".preview-date").textContent = "—";
+    front.querySelector(".preview-word strong").textContent = "CALIBRATION";
+    front.querySelector(".preview-word small").textContent = "—";
+    front.querySelector(".preview-excerpt").textContent = "No entries have been published yet.";
+    front.querySelector(".preview-action").textContent = "ARCHIVE OPENING SOON";
+    rearCards.forEach(card => { card.hidden = true; });
     return;
   }
-  document.getElementById("featuredEntry").textContent = `ENTRY ${featured.entry}`;
-  document.getElementById("featuredDate").textContent = featured.date;
-  document.getElementById("featuredWord").textContent = featured.word.toUpperCase();
-  document.getElementById("featuredClass").textContent = featured.className;
-  featuredText.innerHTML = featured.text.map(line => `${line}<br>`).join("");
-  document.getElementById("featuredNote").textContent = featured.note || "";
-
-  archive.innerHTML = calibrations.map((item, index) => `
-    <button class="archive-item" data-entry-index="${index}">
-      <span class="archive-no">${item.entry}</span>
-      <span class="archive-word">${item.word}</span>
-      <span class="archive-date">${item.date}</span>
-      <span class="archive-arrow">↗</span>
-    </button>`).join("");
-
-  archive.querySelectorAll(".archive-item").forEach(button => {
-    button.addEventListener("click", () => showCalibration(Number(button.dataset.entryIndex)));
-  });
+  setPreviewCard(front, calibrations[0], 0);
+  rearCards.forEach((card, offset) => setPreviewCard(card, calibrations[offset + 1], offset + 1));
 }
 
-function showCalibration(index){
-  const item = calibrations[index];
-  if(!item) return;
-  document.getElementById("featuredEntry").textContent = `ENTRY ${item.entry}`;
-  document.getElementById("featuredDate").textContent = item.date;
-  document.getElementById("featuredWord").textContent = item.word.toUpperCase();
-  document.getElementById("featuredClass").textContent = item.className;
-  featuredText.innerHTML = item.text.map(line => `${line}<br>`).join("");
-  document.getElementById("featuredNote").textContent = item.note || "";
-  document.getElementById("featuredCalibration").scrollIntoView({behavior:"smooth",block:"center"});
-}
-
-renderCalibration();
+renderCalibrationPreview();
 
 function closeNav(){
   navOrb.classList.remove("active");

@@ -1,13 +1,13 @@
 # SERENE Portfolio — V4
 
-Mobile-first interactive portfolio with a living Calibration archive.
+Mobile-first interactive portfolio with a living Calibration preview and publication archive.
 
 ## What is new
 - Slimmer premium floating navigation.
 - Navigation closes on scroll, outside tap, and selection.
-- SERENE CALIBRATION now uses a content data file rather than hard-coded page copy.
-- New entries can be added without rewriting the HTML.
-- Archive lists newest entries first; the newest entry is automatically featured.
+- SERENE CALIBRATION now appears on the homepage as an editorial preview.
+- `calibration.html` is the dedicated reading and archive experience.
+- Both pages consume `window.CALIBRATIONS`; new entries can be added without rewriting HTML.
 - Instagram and TikTok are connected; Facebook/X are intentionally omitted until ready.
 - Reading progress signal and small interaction details add life without overwhelming the content.
 
@@ -32,7 +32,7 @@ Example:
 }
 ```
 
-The site automatically updates the featured entry, counter and archive.
+The homepage preview and `calibration.html` automatically update the featured entry, counter, navigation and archive.
 
 ## Social bios
 Instagram: `Product thinker / builder / creative. Building products, systems & experiments. ↓ The Lab`
