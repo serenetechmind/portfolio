@@ -1,43 +1,27 @@
-# SERENE Portfolio — V4
+# Serene Portfolio, V5
 
-Mobile-first interactive portfolio with a living Calibration archive.
+Mobile-first portfolio rebuilt to be easier for recruiters and clients to scan.
 
-## What is new
-- Slimmer premium floating navigation.
-- Navigation closes on scroll, outside tap, and selection.
-- SERENE CALIBRATION now uses a content data file rather than hard-coded page copy.
-- New entries can be added without rewriting the HTML.
-- Archive lists newest entries first; the newest entry is automatically featured.
-- Instagram and TikTok are connected; Facebook/X are intentionally omitted until ready.
-- Reading progress signal and small interaction details add life without overwhelming the content.
+## What changed from V4
+- New hero says what you do, who it's for, and has two clear buttons (See my work / Get in touch), plus an "Open to work" line.
+- New **Selected work** section with two real case studies: Prex Surprise Calls and Epiphany Hub (brief, what was built, stack, live link).
+- Concept projects (Serenex, Volta Pay, Zora Axis, Vybe by Synq) moved into a short "Also in the workshop" list. No more dead "case study is being prepared" buttons.
+- About now lists concrete skills. The build loop is one compact row.
+- The Lab and Serene Calibration sit together under **Beyond the work**, below the proof.
+- Contact has a header "Hire me" button, an email button and a copy-email button.
+- Bigger, higher-contrast text (nothing under 13px). Focus outlines and reduced-motion support added.
+- Fixed: the old CSS had a stray `}` that pushed mobile rules onto desktop.
+- Fixed: "Copy link" now links to the entry being viewed (`#calibration-001`).
+- Removed `update.py` (an old patch script that is no longer needed).
 
-## How to publish a new Calibration entry
-Open `calibrations.js` and add the newest object at the TOP of `window.CALIBRATIONS`.
+## Things to check before deploying
+- Phone mockups are CSS illustrations. Swap in real screenshots when ready: replace the `.phone` block with
+  `<img class="shot" src="prex.png" alt="...">` (comments in `index.html` show where).
+- Read every line in the two project cards and delete anything that isn't true yet.
+- Change the "Open to work and freelance projects" line if it doesn't match your situation.
 
-Example:
-
-```js
-{
-  entry: "002",
-  word: "ephemeral",
-  className: "ADJECTIVE",
-  date: "29 AUG 2026",
-  text: [
-    "Your first line...",
-    "Your second line...",
-    "Your third line...",
-    "Your fourth line..."
-  ],
-  note: "Optional note about the exercise."
-}
-```
-
-The site automatically updates the featured entry, counter and archive.
-
-## Social bios
-Instagram: `Product thinker / builder / creative. Building products, systems & experiments. ↓ The Lab`
-
-TikTok: `I build what's next. Products • systems • experiments • words. SERENE / THE LAB`
+## Add a Calibration entry
+Add a new object at the TOP of `window.CALIBRATIONS` in `calibrations.js`. The featured card, counter and archive update automatically.
 
 ## Deploy
-Replace the files in the existing portfolio repository and push to GitHub. Vercel can redeploy from the connected repository.
+Replace the files in your portfolio repository and push to GitHub.

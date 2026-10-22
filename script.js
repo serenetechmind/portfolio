@@ -1,145 +1,119 @@
-const navOrb = document.getElementById("navOrb");
-const floatingNav = document.getElementById("floatingNav");
-const toast = document.getElementById("toast");
+const $ = (id) => document.getElementById(id);
+const navOrb = $("navOrb");
+const floatingNav = $("floatingNav");
+const toast = $("toast");
 
-// Calibration content engine: newest entry is always featured.
-const calibrations = window.CALIBRATIONS || [];
-const featuredText = document.getElementById("featuredText");
-const archive = document.getElementById("calibrationArchive");
-const featured = calibrations[0];
-
-function renderCalibration(){
-  document.getElementById("calibrationCount").textContent = String(calibrations.length).padStart(2,"0");
-  if(!featured){
-    document.getElementById("featuredEntry").textContent = "NO ENTRIES";
-    document.getElementById("featuredDate").textContent = "";
-    document.getElementById("featuredWord").textContent = "CALIBRATION";
-    document.getElementById("featuredClass").textContent = "";
-    featuredText.textContent = "No calibration entries yet.";
-    document.getElementById("featuredNote").textContent = "";
-    archive.innerHTML = "";
-    return;
-  }
-  document.getElementById("featuredEntry").textContent = `ENTRY ${featured.entry}`;
-  document.getElementById("featuredDate").textContent = featured.date;
-  document.getElementById("featuredWord").textContent = featured.word.toUpperCase();
-  document.getElementById("featuredClass").textContent = featured.className;
-  featuredText.innerHTML = featured.text.map(line => `${line}<br>`).join("");
-  document.getElementById("featuredNote").textContent = featured.note || "";
-
-  archive.innerHTML = calibrations.map((item, index) => `
-    <button class="archive-item" data-entry-index="${index}">
-      <span class="archive-no">${item.entry}</span>
-      <span class="archive-word">${item.word}</span>
-      <span class="archive-date">${item.date}</span>
-      <span class="archive-arrow">↗</span>
-    </button>`).join("");
-
-  archive.querySelectorAll(".archive-item").forEach(button => {
-    button.addEventListener("click", () => showCalibration(Number(button.dataset.entryIndex)));
-  });
+/* ---------- toast ---------- */
+let toastTimer;
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
 }
 
-function showCalibration(index){
-  const item = calibrations[index];
-  if(!item) return;
-  document.getElementById("featuredEntry").textContent = `ENTRY ${item.entry}`;
-  document.getElementById("featuredDate").textContent = item.date;
-  document.getElementById("featuredWord").textContent = item.word.toUpperCase();
-  document.getElementById("featuredClass").textContent = item.className;
-  featuredText.innerHTML = item.text.map(line => `${line}<br>`).join("");
-  document.getElementById("featuredNote").textContent = item.note || "";
-  document.getElementById("featuredCalibration").scrollIntoView({behavior:"smooth",block:"center"});
-}
-
-renderCalibration();
-
-function closeNav(){
-  navOrb.classList.remove("active");
-  navOrb.setAttribute("aria-expanded","false");
-  floatingNav.classList.remove("open");
-  floatingNav.setAttribute("aria-hidden","true");
-}
-function openNav(){
-  navOrb.classList.add("active");
-  navOrb.setAttribute("aria-expanded","true");
-  floatingNav.classList.add("open");
-  floatingNav.setAttribute("aria-hidden","false");
+/* ---------- floating menu ---------- */
+function setNav(open){
+  navOrb.classList.toggle("active", open);
+  navOrb.setAttribute("aria-expanded", String(open));
+  floatingNav.classList.toggle("open", open);
+  floatingNav.setAttribute("aria-hidden", String(!open));
 }
 navOrb.addEventListener("click", e => {
   e.stopPropagation();
-  floatingNav.classList.contains("open") ? closeNav() : openNav();
+  setNav(!floatingNav.classList.contains("open"));
 });
-
 document.querySelectorAll("[data-go]").forEach(el => {
   el.addEventListener("click", () => {
-    const id = el.dataset.go;
-    closeNav();
-    document.getElementById(id)?.scrollIntoView({behavior:"smooth", block:"start"});
+    setNav(false);
+    document.getElementById(el.dataset.go)?.scrollIntoView({behavior:"smooth", block:"start"});
   });
 });
-
 document.addEventListener("click", e => {
-  if(floatingNav.classList.contains("open") && !floatingNav.contains(e.target) && e.target !== navOrb) closeNav();
+  if(floatingNav.classList.contains("open") && !floatingNav.contains(e.target) && !navOrb.contains(e.target)) setNav(false);
 });
+document.addEventListener("keydown", e => { if(e.key === "Escape") setNav(false); });
 
-let scrollClose;
-window.addEventListener("scroll", () => {
-  if(floatingNav.classList.contains("open")){
-    clearTimeout(scrollClose);
-    scrollClose = setTimeout(closeNav, 50);
-  }
-}, {passive:true});
-
-let toastTimer;
-document.querySelectorAll("[data-toast]").forEach(el => {
-  el.addEventListener("click", () => {
-    toast.textContent = el.dataset.toast;
-    toast.classList.add("show");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
-  });
-});
-
-// Subtle cursor/press response for the application feel.
-document.querySelectorAll(".route,.world-card,.lab-frame").forEach(card => {
-  card.addEventListener("pointermove", e => {
-    if(window.matchMedia("(hover:hover)").matches){
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX-r.left)/r.width-.5;
-      const y = (e.clientY-r.top)/r.height-.5;
-      card.style.transform = `perspective(900px) rotateX(${(-y*1.1).toFixed(2)}deg) rotateY(${(x*1.1).toFixed(2)}deg)`;
-    }
-  });
-  card.addEventListener("pointerleave", () => card.style.transform = "");
-});
-
-// Reveal sections lightly as they enter the viewport.
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add("entered");
-  });
-},{threshold:.12});
-document.querySelectorAll(".section").forEach(s => observer.observe(s));
-
-
-const shareCalibration = document.getElementById("shareCalibration");
-shareCalibration?.addEventListener("click", async () => {
-  const url = `${location.origin}${location.pathname}#calibration`;
-  try {
-    await navigator.clipboard.writeText(url);
-    shareCalibration.textContent = "LINK COPIED ✓";
-    setTimeout(() => shareCalibration.textContent = "COPY ENTRY LINK ↗", 1800);
-  } catch {
-    window.location.hash = "calibration";
-  }
-});
-
-// Small reading-progress signal for the application feel.
+/* ---------- reading progress ---------- */
 const progress = document.createElement("div");
 progress.className = "reading-progress";
 document.body.appendChild(progress);
 window.addEventListener("scroll", () => {
   const max = document.documentElement.scrollHeight - innerHeight;
   progress.style.transform = `scaleX(${max ? scrollY / max : 0})`;
+  if(floatingNav.classList.contains("open")) setNav(false);
 }, {passive:true});
+
+/* ---------- copy email ---------- */
+$("copyEmail")?.addEventListener("click", async () => {
+  try{
+    await navigator.clipboard.writeText("serenetechmind@gmail.com");
+    showToast("Email address copied");
+  }catch{
+    showToast("Copy failed. The address is shown below the buttons.");
+  }
+});
+
+/* ---------- Calibration content engine ---------- */
+const calibrations = window.CALIBRATIONS || [];
+const archive = $("calibrationArchive");
+let currentIndex = 0;
+
+function fillCard(item){
+  $("featuredEntry").textContent = `Entry ${item.entry}`;
+  $("featuredDate").textContent = item.date;
+  $("featuredWord").textContent = item.word;
+  $("featuredClass").textContent = item.className;
+  const text = $("featuredText");
+  text.replaceChildren();
+  item.text.forEach((line, i) => {
+    if(i) text.appendChild(document.createElement("br"));
+    text.appendChild(document.createTextNode(line));
+  });
+  $("featuredNote").textContent = item.note || "";
+}
+
+function showCalibration(index, scroll){
+  const item = calibrations[index];
+  if(!item) return;
+  currentIndex = index;
+  fillCard(item);
+  if(scroll) $("featuredCalibration").scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+function renderCalibration(){
+  if(!calibrations.length) return;
+  $("calibrationCount").textContent = String(calibrations.length).padStart(2, "0");
+  archive.replaceChildren();
+  calibrations.forEach((item, index) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "archive-item";
+    [["archive-no", item.entry], ["archive-word", item.word], ["archive-date", item.date], ["archive-arrow", "↗"]].forEach(([cls, val]) => {
+      const s = document.createElement("span");
+      s.className = cls;
+      s.textContent = val;
+      b.appendChild(s);
+    });
+    b.addEventListener("click", () => showCalibration(index, true));
+    archive.appendChild(b);
+  });
+
+  // Deep link: #calibration-002 opens that entry
+  const match = location.hash.match(/^#calibration-(\w+)$/);
+  const found = match ? calibrations.findIndex(c => c.entry === match[1]) : -1;
+  showCalibration(found >= 0 ? found : 0, false);
+  if(found >= 0) setTimeout(() => $("calibration").scrollIntoView({behavior:"smooth", block:"start"}), 300);
+}
+renderCalibration();
+
+$("shareCalibration")?.addEventListener("click", async () => {
+  const entry = calibrations[currentIndex]?.entry;
+  const url = `${location.origin}${location.pathname}#calibration-${entry}`;
+  try{
+    await navigator.clipboard.writeText(url);
+    showToast("Link to this entry copied");
+  }catch{
+    location.hash = `calibration-${entry}`;
+  }
+});

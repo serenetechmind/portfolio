@@ -3,264 +3,275 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080611">
-<meta name="description" content="SERENE — Product thinker, builder and creative. Digital products, systems and experiments.">
-<title>SERENE — Builder / Product Thinker / Creative</title>
+<meta name="theme-color" content="#070711">
+<title>Serene — Product builder in Nigeria</title>
+<meta name="description" content="Serene builds websites, platforms and apps for African brands and communities. See recent work, how I think, and how to reach me.">
+<meta property="og:title" content="Serene — Product builder in Nigeria">
+<meta property="og:description" content="Websites, platforms and apps for African brands and communities, from first idea to live site.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="noise"></div>
-<div class="ambient ambient-a"></div>
-<div class="ambient ambient-b"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<a class="skip" href="#work">Skip to work</a>
 
 <header class="site-header">
-  <a href="#home" class="brand" aria-label="SERENE home">SERENE<span>®</span></a>
-  <div class="system-status"><i></i><span>SYSTEM / ONLINE</span></div>
-  <div class="header-year">2026</div>
+  <a href="#home" class="brand" aria-label="Serene, home">SERENE<span>®</span></a>
+  <nav class="top-links" aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#beyond">Lab &amp; words</a>
+  </nav>
+  <a class="hire" href="#contact">Hire me</a>
 </header>
 
-<!-- Floating application-style navigation -->
-<button class="nav-orb" id="navOrb" aria-label="Open navigation" aria-expanded="false">
-  <span class="orb-core"></span>
-  <span class="orb-plus">+</span>
+<!-- Floating menu (mobile) -->
+<button class="nav-orb" id="navOrb" aria-label="Open menu" aria-expanded="false" aria-controls="floatingNav">
+  <span class="orb-plus" aria-hidden="true">+</span>
 </button>
-
-<nav class="floating-nav" id="floatingNav" aria-hidden="true">
-  <div class="nav-caption">NAVIGATION / 00—05</div>
-  <button data-go="home"><span>00</span> HOME</button>
-  <button data-go="identity"><span>01</span> IDENTITY</button>
-  <button data-go="worlds"><span>02</span> WORLDS</button>
-  <button data-go="lab"><span>03</span> THE LAB</button>
-  <button data-go="calibration"><span>04</span> CALIBRATION</button>
-  <button data-go="contact"><span>05</span> CONTACT</button>
+<nav class="floating-nav" id="floatingNav" aria-label="Menu" aria-hidden="true">
+  <button data-go="home">Home</button>
+  <button data-go="work">Work</button>
+  <button data-go="about">About</button>
+  <button data-go="beyond">Lab &amp; words</button>
+  <button data-go="contact">Contact</button>
 </nav>
 
 <main>
-<section class="hero screen" id="home">
-  <div class="hero-grid"></div>
-  <div class="hero-top">
-    <span>PRODUCT THINKER / BUILDER / CREATIVE</span>
-    <span class="desktop-only">BASED IN NIGERIA</span>
-  </div>
+
+<!-- HERO -->
+<section class="hero wrap" id="home">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-orbit" aria-hidden="true"></div>
 
   <div class="hero-copy">
-    <p class="eyebrow">I DON'T JUST BUILD PRODUCTS.</p>
-    <h1><strong>I BUILD</strong><em>WHAT'S NEXT.</em></h1>
-    <p class="hero-explain">
-      I turn ideas into <b>digital products, systems and experiments</b> — moving from
-      “what if?” to something people can actually use.
+    <p class="status rise" style="--d:0s"><i aria-hidden="true"></i>Open to work and freelance projects</p>
+    <h1 class="rise" style="--d:.08s">I build products <em>people actually use.</em></h1>
+    <p class="hero-explain rise" style="--d:.18s">
+      I'm Serene, a product builder in Nigeria. I design and build websites, platforms and apps
+      for African brands and communities, from first idea to live site.
     </p>
-
-    <div class="hero-routes">
-      <button class="route primary" data-go="worlds">
-        <span><small>START HERE</small>EXPLORE WHAT I BUILD</span><b>↗</b>
-      </button>
-      <button class="route secondary" data-go="identity">
-        <span><small>THE PERSON BEHIND IT</small>MEET THE BUILDER</span><b>↓</b>
-      </button>
+    <div class="hero-actions rise" style="--d:.28s">
+      <a class="btn btn-primary" href="#work">See my work</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
     </div>
-
-    <div class="proof-strip">
-      <span><i></i> PRODUCTS</span>
-      <span>SYSTEMS</span>
-      <span>EXPERIMENTS</span>
-      <span>WRITING</span>
-    </div>
+    <p class="stack-line rise" style="--d:.38s"><span>Works with</span> Firebase, JavaScript, React, Next.js, Svelte, FastAPI</p>
   </div>
-
-  <div class="hero-orbit orbit-a"></div>
-  <div class="hero-orbit orbit-b"></div>
-  <div class="hero-orbit orbit-c"></div>
-
-  <div class="scroll-cue"><span>SCROLL TO ENTER</span><b>↓</b></div>
 </section>
 
-<section class="section identity" id="identity">
-  <div class="section-head">
-    <span>01 / IDENTITY</span>
-    <span>WHO IS BUILDING?</span>
+<!-- SELECTED WORK -->
+<section class="section wrap" id="work">
+  <div class="section-intro">
+    <h2>Selected work</h2>
+    <p>Two recent builds, both live. Open them on your phone, that's where they were designed to be used.</p>
   </div>
 
-  <div class="identity-layout">
-    <div class="portrait-card">
-      <div class="portrait-index">BUILDER / 001</div>
-      <img src="portrait.png" alt="Portrait of Serene">
-      <div class="portrait-bottom"><span>SERENE TECHMIND</span><span>2026</span></div>
+  <!-- PROJECT 1: PREX -->
+  <article class="project" id="prex">
+    <div class="project-stage stage-prex">
+      <!-- To use a real screenshot, replace the .phone block with: <img class="shot" src="prex.png" alt="Prex Surprise Calls on a phone"> -->
+      <div class="phone" role="img" aria-label="Illustration of the Prex Surprise Calls site on a phone">
+        <div class="screen">
+          <span class="p-tag">Surprise calls</span>
+          <p class="p-head">Make someone's day <em>ring.</em></p>
+          <p class="p-sub">You write the message. We make the call and send you the recording.</p>
+          <span class="p-btn">Book on WhatsApp</span>
+          <i class="heart h1">♥</i><i class="heart h2">♥</i><i class="heart h3">♥</i>
+        </div>
+      </div>
     </div>
 
-    <div class="identity-content">
-      <p class="micro">THE SHORT VERSION</p>
-      <h2>I'm a <em>builder</em> who thinks in systems.</h2>
+    <div class="project-info">
+      <p class="project-kind">Client project · Website and booking flow</p>
+      <h3>Prex Surprise Calls</h3>
+      <p class="project-line">A site that makes ordering a surprise call feel like part of the surprise.</p>
+
+      <dl class="facts">
+        <div>
+          <dt>The brief</dt>
+          <dd>A launching business that phones someone with your personal message and sends you the recording. The first design draft felt plain and generic, so I rebuilt it around smooth motion and a warm pink and peach look, using only real information.</dd>
+        </div>
+        <div>
+          <dt>What I built</dt>
+          <dd>
+            <ul>
+              <li>A booking form that opens WhatsApp with the order already written out</li>
+              <li>A scroll-and-tap date and time picker, so nobody types a date</li>
+              <li>An admin dashboard with a visitor counter</li>
+              <li>A proper image preview when the link is shared on WhatsApp</li>
+            </ul>
+          </dd>
+        </div>
+        <div>
+          <dt>Built with</dt>
+          <dd>HTML, CSS and JavaScript, Firebase, Netlify</dd>
+        </div>
+      </dl>
+      <a class="btn btn-primary" href="https://prex-calls.netlify.app" target="_blank" rel="noopener">Visit the live site <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+
+  <!-- PROJECT 2: EPIPHANY HUB -->
+  <article class="project flip" id="epiphany">
+    <div class="project-stage stage-epiphany">
+      <!-- To use a real screenshot, replace the .phone block with: <img class="shot" src="epiphany.png" alt="Epiphany Hub on a phone"> -->
+      <div class="phone" role="img" aria-label="Illustration of the Epiphany Hub site on a phone">
+        <div class="screen">
+          <span class="p-tag">Epiphany Hub</span>
+          <p class="p-head">You are not finished <em>becoming.</em></p>
+          <div class="chips">
+            <span>Epiphany Mind</span><span>The Builder's Room</span><span>Expression Lab</span>
+            <span>The Edge</span><span>Light Room</span><span>Wellness Room</span>
+          </div>
+          <span class="p-btn">Start your Epiphany</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-info">
+      <p class="project-kind">Client project · Community platform</p>
+      <h3>Epiphany Hub</h3>
+      <p class="project-line">A home and a front door for a community that had outgrown its WhatsApp groups.</p>
+
+      <dl class="facts">
+        <div>
+          <dt>The brief</dt>
+          <dd>Epiphany Hub is a 300-member community across Nigeria, Ghana, Cameroon and the UK. It needed a multi-page site, a better way to join than a Google Form, and a way to grow into smaller circles led by real people.</dd>
+        </div>
+        <div>
+          <dt>What I built</dt>
+          <dd>
+            <ul>
+              <li>A multi-page site with six community rooms and a tab switcher</li>
+              <li>A join flow that saves sign-ups to Firestore, built around what people are here for</li>
+              <li>An admin dashboard to manage sign-ups</li>
+              <li>Testimonials that only go live after an admin approves them</li>
+            </ul>
+          </dd>
+        </div>
+        <div>
+          <dt>Built with</dt>
+          <dd>HTML, CSS and JavaScript, Firebase (Firestore), Netlify</dd>
+        </div>
+      </dl>
+      <a class="btn btn-primary" href="https://epiphany-hub.netlify.app" target="_blank" rel="noopener">Visit the live site <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+
+  <!-- IN THE WORKSHOP -->
+  <div class="workshop">
+    <h3>Also in the workshop</h3>
+    <ul>
+      <li><strong>Serenex</strong><span>A hub where creators collaborate and find brand deals.</span></li>
+      <li><strong>Volta Pay</strong><span>A Nigerian fintech app for airtime, data and wallets, with a Pay with Volta checkout.</span></li>
+      <li><strong>Zora Axis</strong><span>An Afro-centric marketplace for AI skills and assets, with gamified challenges.</span></li>
+      <li><strong>Vybe by Synq</strong><span>NFC digital business cards for people and businesses in Lagos.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section wrap" id="about">
+  <div class="about-layout">
+    <div class="portrait-card">
+      <img src="portrait.png" alt="Portrait of Serene" width="1152" height="1536" loading="lazy">
+    </div>
+
+    <div class="about-content">
+      <h2>A builder who <em>thinks in systems.</em></h2>
       <p class="body-copy">
-        I like taking ideas apart, finding the structure underneath them, then building
-        a version that can live in the real world. My work sits between technology,
-        creativity, product thinking and systems.
+        I like taking ideas apart, finding the structure underneath, then building a version
+        that can live in the real world. My work sits between technology, creativity,
+        product thinking and systems.
       </p>
 
-      <div class="capabilities">
-        <div><span>01</span><strong>PRODUCT THINKING</strong><p>Turning rough ideas into clearer products, journeys and experiences.</p></div>
-        <div><span>02</span><strong>SYSTEMS</strong><p>Designing the logic, structure and connections behind a product.</p></div>
-        <div><span>03</span><strong>BUILDING</strong><p>Learning by making — websites, prototypes, tools and experiments.</p></div>
-        <div><span>04</span><strong>CREATIVE TECHNOLOGY</strong><p>Exploring where code, design, writing and imagination overlap.</p></div>
-      </div>
+      <ul class="skills">
+        <li><strong>Product thinking</strong><span>Turning rough ideas into clear products, journeys and flows.</span></li>
+        <li><strong>Front-end</strong><span>Fast, mobile-first sites in HTML, CSS and JavaScript, plus React, Next.js or Svelte when a project needs them.</span></li>
+        <li><strong>Backend and data</strong><span>Firebase and Firestore for sign-ups, admin dashboards and approvals. FastAPI for APIs.</span></li>
+        <li><strong>Creative technology</strong><span>Where code, design and writing overlap.</span></li>
+      </ul>
     </div>
   </div>
-</section>
 
-<section class="section signal">
-  <div class="signal-line"></div>
-  <div class="signal-grid">
-    <div><small>CURRENT STATE</small><strong>BUILDING</strong></div>
-    <div><small>APPROACH</small><strong>THINK → BUILD → OBSERVE</strong></div>
-    <div><small>MODE</small><strong>LEARNING IN PUBLIC</strong></div>
+  <div class="loop">
+    <h3>How I work</h3>
+    <ol>
+      <li><strong>Question</strong><span>What is worth exploring?</span></li>
+      <li><strong>Build</strong><span>Make a small, real version.</span></li>
+      <li><strong>Observe</strong><span>See what people actually understand.</span></li>
+      <li><strong>Repeat</strong><span>Refine, and let the next version teach me.</span></li>
+    </ol>
   </div>
 </section>
 
-<section class="section worlds" id="worlds">
-  <div class="section-head">
-    <span>02 / WORLDS</span>
-    <span>WHAT I'M BUILDING</span>
+<!-- BEYOND THE WORK -->
+<section class="section wrap" id="beyond">
+  <div class="section-intro">
+    <h2>Beyond the work</h2>
+    <p>Where I think out loud: experiments, and a daily habit of learning words.</p>
   </div>
 
-  <div class="world-intro">
+  <a class="lab-card" href="https://the-lab-six-eosin.vercel.app/" target="_blank" rel="noopener" id="lab">
     <div>
-      <p class="micro">NOT JUST PROJECTS</p>
-      <h2>Ideas become<br><em>worlds.</em></h2>
+      <p class="lab-label">The Lab</p>
+      <p class="lab-big">Build. Observe. <em>Repeat.</em></p>
+      <p class="lab-text">Research notes, product experiments and ideas that aren't ready to be called products yet.</p>
     </div>
-    <p class="body-copy">
-      These are the systems, products and concepts I'm exploring. Some are early.
-      Some are becoming real. All of them show how I think.
+    <span class="btn btn-ghost">Enter the Lab <span aria-hidden="true">↗</span></span>
+  </a>
+
+  <div class="calibration" id="calibration">
+    <div class="calibration-layout">
+      <div class="calibration-intro">
+        <h3>Serene Calibration</h3>
+        <p class="body-copy">A daily practice: learn a new word, use it on purpose, and turn it into a few lines of thought.</p>
+        <p class="calibration-counter"><span id="calibrationCount">01</span> entries in the archive</p>
+      </div>
+
+      <article class="calibration-card" id="featuredCalibration" aria-live="polite">
+        <div class="calibration-meta"><span id="featuredEntry">Entry 001</span><span id="featuredDate"></span></div>
+        <div class="calibration-word"><strong id="featuredWord"></strong> <small id="featuredClass"></small></div>
+        <p id="featuredText" class="calibration-text"></p>
+        <p class="calibration-note" id="featuredNote"></p>
+        <div class="calibration-foot"><span>Language practice</span><button class="calibration-share" id="shareCalibration" type="button">Copy link to this entry</button></div>
+      </article>
+    </div>
+
+    <div class="calibration-archive">
+      <div class="archive-head"><span>Archive</span><span>Newest first</span></div>
+      <div id="calibrationArchive"></div>
+    </div>
+
+    <p class="social-row">Follow the practice
+      <a href="https://www.instagram.com/takesbyserene/" target="_blank" rel="noopener">Instagram ↗</a>
+      <a href="https://www.tiktok.com/@takes.by.serene" target="_blank" rel="noopener">TikTok ↗</a>
     </p>
   </div>
-
-  <div class="world-list">
-    <article class="world-card">
-      <div class="world-number">01</div>
-      <div class="world-info">
-        <div class="world-label">CREATOR INFRASTRUCTURE / PLATFORM</div>
-        <h3>SERENEX</h3>
-        <p>A creator ecosystem for managing the creative journey, finding opportunities,
-          collaborating, monetizing and accessing useful tools.</p>
-        <button class="text-action" data-toast="SERENEX case study is being prepared.">VIEW WORLD <span>↗</span></button>
-      </div>
-      <div class="world-visual serenex-visual">
-        <div class="node node-1"></div><div class="node node-2"></div><div class="node node-3"></div>
-        <div class="connection c1"></div><div class="connection c2"></div>
-        <div class="visual-core">SX</div>
-      </div>
-    </article>
-
-    <article class="world-card">
-      <div class="world-number">02</div>
-      <div class="world-info">
-        <div class="world-label">DIGITAL ARCHITECTURE / BRAND SYSTEM</div>
-        <h3>ZORA<br>AXIS</h3>
-        <p>A systems-oriented brand exploring predictable excellence through digital architecture,
-          structure and controlled experience.</p>
-        <button class="text-action" data-toast="ZORA AXIS case study is being prepared.">VIEW WORLD <span>↗</span></button>
-      </div>
-      <div class="world-visual axis-visual">
-        <div class="axis-ring"></div><div class="axis-ring ring-2"></div><div class="axis-ring ring-3"></div>
-        <span>AXIS</span>
-      </div>
-    </article>
-
-    <article class="world-card lab-world" id="lab">
-      <div class="world-number">03</div>
-      <div class="world-info">
-        <div class="world-label">EXPERIMENT / RESEARCH / ARCHIVE</div>
-        <h3>THE<br>LAB</h3>
-        <p>A living archive for experiments, observations, research, prototypes and ideas still becoming.</p>
-        <a class="text-action" href="https://the-lab-six-eosin.vercel.app/" target="_blank" rel="noopener">ENTER THE LAB <span>↗</span></a>
-      </div>
-      <div class="lab-visual">
-        <div>BUILD.</div><div>OBSERVE.</div><div>REPEAT.</div>
-        <small>LIVE / 001</small>
-      </div>
-    </article>
-  </div>
 </section>
 
-<section class="section method">
-  <div class="section-head">
-    <span>03 / HOW I THINK</span>
-    <span>THE BUILD LOOP</span>
-  </div>
-  <div class="method-layout">
-    <h2>Don't wait<br>for the <em>perfect idea.</em></h2>
-    <div class="method-steps">
-      <div><b>01</b><strong>QUESTION</strong><p>What problem, possibility or curiosity is worth exploring?</p></div>
-      <div><b>02</b><strong>BUILD</strong><p>Make a small, tangible version instead of keeping it in your head.</p></div>
-      <div><b>03</b><strong>OBSERVE</strong><p>See what works, what breaks and what people actually understand.</p></div>
-      <div><b>04</b><strong>REPEAT</strong><p>Refine the system and let the next version teach you something new.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section lab-teaser">
-  <div class="lab-frame">
-    <div class="lab-frame-top"><span>THE LAB / LIVE ARCHIVE</span><span>03</span></div>
-    <div class="lab-frame-body">
-      <p class="micro">FOR THE THINGS THAT AREN'T READY TO BE CALLED PRODUCTS</p>
-      <h2>BUILD.<br><em>OBSERVE.<br>REPEAT.</em></h2>
-      <p>Research notes. Product experiments. Strange ideas. Things I'm learning. Things I'm testing.</p>
-      <a href="https://the-lab-six-eosin.vercel.app/" target="_blank" rel="noopener" class="lab-cta">ENTER THE LAB <span>↗</span></a>
-    </div>
-  </div>
-</section>
-
-
-<section class="section calibration" id="calibration">
-  <div class="section-head">
-    <span>04 / CALIBRATION</span>
-    <span>LANGUAGE / DAILY PRACTICE</span>
-  </div>
-  <div class="calibration-layout">
-    <div class="calibration-intro">
-      <p class="micro">THE SERENE CALIBRATION</p>
-      <h2>Words are<br><em>instruments.</em></h2>
-      <p class="body-copy">A daily practice of learning a new word, using it deliberately, and turning language into small pieces of thought.</p>
-      <div class="calibration-counter"><span id="calibrationCount">01</span> ENTRIES IN THE ARCHIVE</div>
-    </div>
-    <article class="calibration-card" id="featuredCalibration">
-      <div class="calibration-meta"><span id="featuredEntry">ENTRY 001</span><span id="featuredDate">28 AUG 2026</span></div>
-      <div class="calibration-word"><span>WORD /</span> <strong id="featuredWord">SHENANIGANS</strong> <small id="featuredClass">NOUN</small></div>
-      <p id="featuredText"></p>
-      <div class="calibration-note" id="featuredNote"></div>
-      <div class="calibration-foot"><span>LANGUAGE PRACTICE</span><button class="calibration-share" id="shareCalibration">COPY ENTRY LINK ↗</button></div>
-    </article>
-  </div>
-  <div class="calibration-archive">
-    <div class="archive-head"><span>ARCHIVE</span><span>NEWEST → OLDEST</span></div>
-    <div id="calibrationArchive"></div>
-  </div>
-  <div class="social-row">
-    <span>FOLLOW THE PRACTICE</span>
-    <a href="https://www.instagram.com/takesbyserene/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
-    <a href="https://www.tiktok.com/@takes.by.serene" target="_blank" rel="noopener">TIKTOK ↗</a>
-  </div>
-</section>
-
-<section class="section contact" id="contact">
-  <div class="section-head">
-    <span>05 / CONTACT</span>
-    <span>OPEN CHANNEL</span>
-  </div>
+<!-- CONTACT -->
+<section class="section wrap contact" id="contact">
   <div class="contact-layout">
-    <div>
-      <p class="micro">HAVE SOMETHING WORTH BUILDING?</p>
-      <h2>LET'S<br><em>BUILD.</em></h2>
-    </div>
+    <h2>Have a project or a role in mind? <em>Let's talk.</em></h2>
     <div class="contact-side">
-      <p>I'm open to conversations around products, systems, creative technology, learning and ambitious ideas.</p>
-      <a href="mailto:serenetechmind@gmail.com">serenetechmind@gmail.com <span>↗</span></a>
+      <p>I'm open to full-time roles and freelance builds: websites, platforms, apps and anything that needs product thinking. Tell me what you're making and I'll reply with how I'd approach it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:serenetechmind@gmail.com?subject=Let%27s%20work%20together">Email me <span aria-hidden="true">↗</span></a>
+        <button class="btn btn-ghost" id="copyEmail" type="button">Copy email address</button>
+      </div>
+      <p class="email-line">serenetechmind@gmail.com</p>
     </div>
   </div>
   <footer>
-    <span>SERENE® / PORTFOLIO</span>
-    <span>THE NEXT VERSION IS ALREADY IN MOTION.</span>
+    <span>© 2026 Serene</span>
+    <span>Built by hand, version 5.</span>
   </footer>
 </section>
+
 </main>
 
 <div class="toast" id="toast" role="status"></div>
